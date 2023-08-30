@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  color-scheme: dark;
+}
+
+body{
+  @apply bg-[#1b1e23]; 
+}
+
+
+#topicsHeaderContainer::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
