@@ -5,7 +5,7 @@ import { getGalery } from "@/services/fakeSplash/getGallery";
 
 export default async function Gallery(req) {
 	const { searchParams } = req;
-	const { page, photo: photoId } = searchParams;
+	const { page } = searchParams;
 
 	const data = await getGalery(page);
 	const prevPagePath = `/gallery?page=${Number(page) - 1}`;
@@ -14,7 +14,7 @@ export default async function Gallery(req) {
 	return (
 		<section className="pt-[150px]">
 			<Banner />
-			<ImageGallery page={page} data={data} nextPagePath={nextPagePath} />
+			<ImageGallery data={data} />
 			<Pagination
 				nextPagePath={nextPagePath}
 				prevPagePath={prevPagePath}
